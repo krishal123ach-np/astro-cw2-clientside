@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Mission — AstroLaunch Expeditions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html">AstroLaunch Expeditions</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="booking.html">Book a Mission</a></li>
+        <li><a href="simulator.html">Simulator</a></li>
+        <li><a href="dashboard.html">My Missions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Reserve Your Seat</h1>
+
+    <form id="bookingForm">
+      <label for="fullName">Full name</label>
+      <input type="text" id="fullName" name="fullName">
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email">
+
+      <label for="destination">Destination</label>
+      <select id="destination" name="destination">
+        <option value="">Choose destination…</option>
+        <option value="Mars">Mars</option>
+        <option value="Europa">Europa</option>
+        <option value="Kepler-186f">Kepler-186f</option>
+      </select>
+
+      <label for="rocketType">Rocket type</label>
+      <select id="rocketType" name="rocketType">
+        <option value="">Choose rocket…</option>
+        <option value="Ares-Class">Ares-Class</option>
+        <option value="Halcyon-Class">Halcyon-Class</option>
+        <option value="Meridian-Class">Meridian-Class</option>
+      </select>
+
+      <label for="crewSize">Crew size</label>
+      <input type="number" id="crewSize" name="crewSize" min="1" max="8">
+
+      <label for="launchDate">Preferred launch date</label>
+      <input type="date" id="launchDate" name="launchDate">
+
+      <label for="terms">
+        <input type="checkbox" id="terms" name="terms">
+        I agree to the mission terms.
+      </label>
+
+      <button type="submit">Submit booking request</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AstroLaunch Expeditions</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
