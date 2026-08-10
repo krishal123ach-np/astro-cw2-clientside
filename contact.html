@@ -29,25 +29,26 @@
     <form id="contactForm">
       <label for="cName">Name</label>
       <input type="text" id="cName" name="cName">
-      <p id="cNameError"></p>
+      <p id="cNameError" class="error-text">Please enter your name.</p>
 
       <label for="cEmail">Email</label>
       <input type="email" id="cEmail" name="cEmail">
-      <p id="cEmailError"></p>
+      <p id="cEmailError" class="error-text">Please enter a valid email.</p>
 
       <label for="cMessage">Message</label>
       <textarea id="cMessage" name="cMessage" rows="5"></textarea>
-      <p id="cMessageError"></p>
+      <p id="cMessageError" class="error-text">Message must be at least 10 characters.</p>
 
       <button type="submit">Send message</button>
     </form>
 
     <section>
       <h2>Frequently Asked Questions</h2>
-      <h3>Do I need prior spaceflight experience?</h3>
+
+      <p class="faq-question">Do I need prior spaceflight experience?</p>
       <p>Placeholder answer.</p>
 
-      <h3>Can I change my destination after booking?</h3>
+      <p class="faq-question">Can I change my destination after booking?</p>
       <p>Placeholder answer.</p>
     </section>
   </main>
