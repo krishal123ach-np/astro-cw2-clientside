@@ -1,0 +1,44 @@
+.countdown-box {
+    font-size: 3rem;
+    text-align: center;
+    color: #f2a65a;
+    margin: 20px 0;
+    display: none;
+}
+
+.status-log {
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    padding: 16px;
+    height: 150px;
+    overflow-y: auto;
+    font-family: moonospace;
+    font-size: 0.85rem;
+}
+
+.analysis-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.analysis-item {
+    flex: 1;
+    min-width: 120px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.remove-btn {
+    background-color: #cc3333;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+}
+
+.remove-btn:hover {
+    background-color: #a32828;
+}
