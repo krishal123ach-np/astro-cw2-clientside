@@ -1,0 +1,23 @@
+.error-text {
+  color: #cc3333;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.checkbox-row input {
+  width: auto;
+}
+
+.faq-question {
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
