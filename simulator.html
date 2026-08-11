@@ -1,53 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Mission Simulator - Astrolaunch Expeditions</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <a href="index.html">Astrolaunch Expeditions</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="destinations.html">Destinations</a></li>
-                    <li><a href="booking.html">Book a Mission</a></li>
-                    <li><a href="simulator.html">Simulator</a></li>
-                    <li><a href="dashboard.html">My Missions</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Simulator — AstroLaunch Expeditions</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-        <main>
-            <h1>Preview Your Landing</h1>
+  <header>
+    <a href="index.html">AstroLaunch Expeditions</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="booking.html">Book a Mission</a></li>
+        <li><a href="simulator.html">Simulator</a></li>
+        <li><a href="dashboard.html">My Missions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-            <label for="simPlanet">Choose destination</label>
-            <select id="simPlanet">
-                <option value="mars">Mars</option>
-                <option value="europa">Europa</option>
-                <option value="kepler">Kepler-186f</Kepler-186f></option>
-            </select>
+  <main>
+    <h1>Preview Your Landing</h1>
 
-            <button id="simStart">Begin Launch Sequence</button>
+    <label for="simPlanet">Choose destination</label>
+    <select id="simPlanet">
+      <option value="mars">Mars</option>
+      <option value="europa">Europa</option>
+      <option value="kepler">Kepler-186f</option>
+    </select>
 
-            <div id="countdown"></div>
-            <div id="statusLog"></div>
-            <div id="simResults"></div>
-        
+    <button id="simStart">Begin Launch Sequence</button>
 
+    <div id="countdown" class="countdown-box">5</div>
 
-        </main>
+    <div id="statusLog" class="status-log">
+      <p>Awaiting launch command...</p>
+    </div>
 
-        <footer>
-            <p>&copy; 2026 AstroLaunch Expeditions</p>
-        </footer>
+    <div id="simResults">
+      <h2>Planet Analysis</h2>
+      <div class="analysis-grid">
+        <div class="analysis-item">Gravity: <span id="gVal">--</span></div>
+        <div class="analysis-item">Temperature: <span id="tVal">--</span></div>
+        <div class="analysis-item">Atmosphere: <span id="aVal">--</span></div>
+        <div class="analysis-item">Water: <span id="wVal">--</span></div>
+      </div>
+      <p>Habitability Score: <span id="scoreVal">--</span></p>
+    </div>
+  </main>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="script.js"></script>
-    
-    </body>
+  <footer>
+    <p>&copy; 2026 AstroLaunch Expeditions</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
 </html>
