@@ -1,3 +1,24 @@
+
+/*
+  AstroLaunch Expeditions — script.js
+  -----------------------------------
+  This file handles all interactive behavior across the site using jQuery.
+
+  Sections in this file:
+  1. Booking form validation (checks each field, saves valid bookings to localStorage)
+  2. Contact form validation (checks each field, shows a confirmation)
+  3. Mission Simulator (countdown, simulated landing, planet analysis results)
+  4. Dashboard (reads saved bookings/reports from localStorage and displays them as cards)
+
+  All code runs inside $(document).ready() to make sure the page has
+  fully loaded before any JavaScript tries to interact with it.
+*/
+
+
+
+
+
+
 $(document).ready(function () {
 
   // BOOKING FORM VALIDATION
