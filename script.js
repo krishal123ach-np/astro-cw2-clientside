@@ -120,3 +120,139 @@ $(document).ready(function () {
   });
 
 });
+
+  // MISSION SIMULATOR 
+  const planetData = {
+    mars: {
+      name: "Mars",
+      gravity: "0.38g",
+      temperature: "-63°C",
+      atmosphere: "Thin CO2 — suit required",
+      water: "Ice at poles",
+      score: 58
+    },
+    europa: {
+      name: "Europa",
+      gravity: "0.13g",
+      temperature: "-160°C",
+      atmosphere: "Trace oxygen — suit required",
+      water: "Subsurface ocean",
+      score: 41
+    },
+    kepler: {
+      name: "Kepler-186f",
+      gravity: "1.1g",
+      temperature: "-5°C",
+      atmosphere: "Breathable with equipment",
+      water: "Present",
+      score: 82
+    }
+  };
+
+  $("#simStart").on("click", function () {
+    const chosenPlanet = $("#simPlanet").val();
+    const planet = planetData[chosenPlanet];
+
+    $("#statusLog").html("<p>Launch sequence starting...</p>");
+    $("#countdown").show();
+
+    let count = 5;
+    $("#countdown").text(count);
+
+    const countdownTimer = setInterval(function () {
+      count--;
+
+      if (count > 0) {
+        $("#countdown").text(count);
+      } else {
+        clearInterval(countdownTimer);
+        $("#countdown").text("LIFTOFF!");
+        $("#statusLog").append("<p>Ignition confirmed. Heading to " + planet.name + ".</p>");
+
+        setTimeout(function () {
+          $("#statusLog").append("<p>Landing confirmed on " + planet.name + ".</p>");
+          showResults(planet);
+        }, 2000);
+      }
+    }, 1000);
+  });
+
+  function showResults(planet) {
+    $("#gVal").text(planet.gravity);
+    $("#tVal").text(planet.temperature);
+    $("#aVal").text(planet.atmosphere);
+    $("#wVal").text(planet.water);
+    $("#scoreVal").text(planet.score + "%");
+
+    const report = {
+      id: Date.now(),
+      planet: planet.name,
+      score: planet.score
+    };
+
+    let reports = JSON.parse(localStorage.getItem("astro_reports")) || [];
+    reports.push(report);
+    localStorage.setItem("astro_reports", JSON.stringify(reports));
+  }
+
+
+  // DASHBOARD (My Missions page)
+  if ($("#missionList").length > 0) {
+    loadMissions();
+  }
+
+  function loadMissions() {
+    const bookings = JSON.parse(localStorage.getItem("astro_bookings")) || [];
+    const reports = JSON.parse(localStorage.getItem("astro_reports")) || [];
+
+    $("#missionList").empty();
+
+    if (bookings.length === 0 && reports.length === 0) {
+      $("#missionList").html("<p>No missions saved yet.</p>");
+      return;
+    }
+
+    bookings.forEach(function (booking) {
+      const card = $("<div class='mission-card'></div>");
+      const info = $("<span></span>").text(booking.destination + " — booked for " + booking.date);
+      const removeButton = $("<button class='remove-btn'>Cancel</button>");
+
+      removeButton.on("click", function () {
+        removeBooking(booking.id);
+      });
+
+      card.append(info).append(removeButton);
+      $("#missionList").append(card);
+    });
+
+    reports.forEach(function (report) {
+      const card = $("<div class='mission-card'></div>");
+      const info = $("<span></span>").text(report.planet + " — simulation, habitability " + report.score + "%");
+      const removeButton = $("<button class='remove-btn'>Delete</button>");
+
+      removeButton.on("click", function () {
+        removeReport(report.id);
+      });
+
+      card.append(info).append(removeButton);
+      $("#missionList").append(card);
+    });
+  }
+
+  function removeBooking(id) {
+    let bookings = JSON.parse(localStorage.getItem("astro_bookings")) || [];
+    bookings = bookings.filter(function (b) {
+      return b.id !== id;
+    });
+    localStorage.setItem("astro_bookings", JSON.stringify(bookings));
+    loadMissions();
+  }
+
+  function removeReport(id) {
+    let reports = JSON.parse(localStorage.getItem("astro_reports")) || [];
+    reports = reports.filter(function (r) {
+      return r.id !== id;
+    });
+    localStorage.setItem("astro_reports", JSON.stringify(reports));
+    loadMissions();
+  }
