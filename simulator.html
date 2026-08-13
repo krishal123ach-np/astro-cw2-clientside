@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mission Simulator — AstroLaunch Expeditions</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+
+  <header>
+    <a href="index.html">AstroLaunch Expeditions</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="booking.html">Book a Mission</a></li>
+        <li><a href="simulator.html">Simulator</a></li>
+        <li><a href="dashboard.html">My Missions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Preview Your Landing</h1>
+    <p>Pick a destination and run a full launch-to-landing simulation, using the same habitability checks we run on every real mission.</p>
+
+    <label for="simPlanet">Choose destination</label>
+    <select id="simPlanet">
+      <option value="mars">Mars</option>
+      <option value="europa">Europa</option>
+      <option value="kepler">Kepler-186f</option>
+    </select>
+
+    <button id="simStart">Begin Launch Sequence</button>
+
+    <div id="countdown" class="countdown-box">5</div>
+
+    <div id="statusLog" class="status-log">
+      <p>Awaiting launch command...</p>
+    </div>
+
+    <div id="simResults">
+      <h2>Planet Analysis</h2>
+      <div class="analysis-grid">
+        <div class="analysis-item">Gravity: <span id="gVal">--</span></div>
+        <div class="analysis-item">Temperature: <span id="tVal">--</span></div>
+        <div class="analysis-item">Atmosphere: <span id="aVal">--</span></div>
+        <div class="analysis-item">Water: <span id="wVal">--</span></div>
+      </div>
+      <p>Habitability Score: <span id="scoreVal">--</span></p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AstroLaunch Expeditions</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

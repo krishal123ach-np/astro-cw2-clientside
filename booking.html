@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Mission — AstroLaunch Expeditions</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+</head>
+<body>
+
+  <header>
+    <a href="index.html">AstroLaunch Expeditions</a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="booking.html">Book a Mission</a></li>
+        <li><a href="simulator.html">Simulator</a></li>
+        <li><a href="dashboard.html">My Missions</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Reserve Your Seat</h1>
+    <p>Fill in the form below to request a mission. A crew coordinator confirms every booking within one working day.</p>
+
+    <form id="bookingForm">
+      <label for="fullName">Full name</label>
+      <input type="text" id="fullName" name="fullName">
+      <p id="fullNameError" class="error-text">Please enter your name.</p>
+
+      <label for="email">Email address</label>
+      <input type="email" id="email" name="email">
+      <p id="emailError" class="error-text">Please enter a valid email.</p>
+
+      <label for="destination">Destination</label>
+      <select id="destination" name="destination">
+        <option value="">Choose destination…</option>
+        <option value="Mars">Mars</option>
+        <option value="Europa">Europa</option>
+        <option value="Kepler-186f">Kepler-186f</option>
+      </select>
+      <p id="destinationError" class="error-text">Please choose a destination.</p>
+
+      <label for="rocketType">Rocket type</label>
+      <select id="rocketType" name="rocketType">
+        <option value="">Choose rocket…</option>
+        <option value="Ares-Class">Ares-Class</option>
+        <option value="Halcyon-Class">Halcyon-Class</option>
+        <option value="Meridian-Class">Meridian-Class</option>
+      </select>
+      <p id="rocketTypeError" class="error-text">Please choose a rocket type.</p>
+
+      <label for="crewSize">Crew size</label>
+      <input type="number" id="crewSize" name="crewSize" min="1" max="8">
+      <p id="crewSizeError" class="error-text">Crew size must be between 1 and 8.</p>
+
+      <label for="launchDate">Preferred launch date</label>
+      <input type="date" id="launchDate" name="launchDate">
+      <p id="launchDateError" class="error-text">Please choose a valid launch date.</p>
+
+      <div class="checkbox-row">
+        <input type="checkbox" id="terms" name="terms">
+        <label for="terms">I agree to the mission terms.</label>
+      </div>
+      <p id="termsError" class="error-text">You must agree to the terms.</p>
+
+      <button type="submit">Submit booking request</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 AstroLaunch Expeditions</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
